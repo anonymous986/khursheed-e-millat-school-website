@@ -17,11 +17,14 @@
 }
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
     background: #f7fafd;
     margin: 0;
     padding: 0;
     color: #222;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 nav {
@@ -34,9 +37,10 @@ nav {
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 nav .logo {
+    font-family: 'Poppins', 'Inter', sans-serif;
     font-size: 1.4rem;
-    font-weight: bold;
-    letter-spacing: 1px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 .nav-links {
     list-style: none;
@@ -46,9 +50,11 @@ nav .logo {
     padding: 0;
 }
 .nav-links a {
+    font-family: 'Inter', sans-serif;
     color: white;
     text-decoration: none;
     font-weight: 500;
+    letter-spacing: 0.2px;
     transition: color 0.2s;
 }
 .nav-links a:hover {
@@ -62,13 +68,19 @@ header {
     padding: 2.5rem 1rem 2rem 1rem;
 }
 header h1 {
+    font-family: 'Poppins', 'Inter', sans-serif;
     margin: 0 0 12px 0;
     font-size: 2.7rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 header p {
+    font-family: 'Inter', sans-serif;
     margin: 0;
     font-size: 1.2rem;
-    opacity: 0.85;
+    font-weight: 400;
+    opacity: 0.9;
+    letter-spacing: 0.2px;
 }
 
 main {
@@ -84,14 +96,29 @@ section {
     padding: 2rem 1.3rem;
 }
 section h2 {
+    font-family: 'Poppins', 'Inter', sans-serif;
     margin-top: 0;
     color: var(--primary-color);
     font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -0.3px;
 }
+
+/* Center Student of the Month section */
+#student-month {
+    text-align: center;
+}
+
+#student-month h2 {
+    text-align: center;
+}
+
 .student-info {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1.1rem;
+    justify-content: center;
+    gap: 1.5rem;
     margin-top: 1.2rem;
 }
 #student-photo {
@@ -103,9 +130,16 @@ section h2 {
     border: 2px solid var(--secondary-color);
     box-shadow: 0 2px 12px rgba(72,202,228,0.2);
 }
+#student-info {
+    text-align: center;
+}
+
 #student-info p {
     margin: 0.6rem 0;
     font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+    text-align: center;
 }
 .gallery-grid {
     display: grid;
@@ -149,13 +183,19 @@ section h2 {
     box-shadow: var(--admin-shadow);
 }
 #admin-panel h2, #admin-panel h3 {
+    font-family: 'Poppins', 'Inter', sans-serif;
     color: #00567a;
+    font-weight: 600;
+    letter-spacing: -0.2px;
 }
 #gallery-admin {
     margin-top: 1.7rem;
 }
 #gallery-admin h2 {
+    font-family: 'Poppins', 'Inter', sans-serif;
     color: var(--primary-color);
+    font-weight: 600;
+    letter-spacing: -0.3px;
 }
 form {
     margin-bottom: 1.7rem;
@@ -164,9 +204,12 @@ form label {
     display: block;
     margin: 0.9rem 0 0.2rem 0;
     font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.1px;
 }
 form input[type="text"],
 form input[type="file"] {
+    font-family: 'Inter', sans-serif;
     width: 98%;
     padding: 0.6rem 0.8rem;
     margin-bottom: 0.9rem;
@@ -174,8 +217,10 @@ form input[type="file"] {
     border: 1px solid var(--form-border);
     background: var(--form-background);
     font-size: 1rem;
+    letter-spacing: 0.1px;
 }
 form button {
+    font-family: 'Inter', sans-serif;
     background: var(--primary-color);
     color: white;
     padding: 0.65rem 1.7rem;
@@ -183,11 +228,137 @@ form button {
     border-radius: 5px;
     font-size: 1rem;
     font-weight: 600;
+    letter-spacing: 0.3px;
     cursor: pointer;
     transition: background 0.2s;
 }
 form button:hover {
     background: #009ddc;
+}
+
+/* Login Section */
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    visibility: visible;
+}
+
+.login-section.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.login-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    padding: 2.5rem;
+    max-width: 400px;
+    width: 100%;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.login-container h2 {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.login-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+#login-form {
+    margin-bottom: 0;
+}
+
+#login-form label {
+    display: block;
+    margin: 1rem 0 0.3rem 0;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    border: 2px solid var(--form-border);
+    background: var(--form-background);
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+#login-form input[type="text"]:focus,
+#login-form input[type="password"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0,119,182,0.1);
+    transform: translateY(-2px);
+}
+
+#login-form button {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.85rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.login-error {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: #fee;
+    border: 1px solid #fcc;
+    border-radius: 5px;
+    color: #c33;
+    text-align: center;
+    font-size: 0.9rem;
+    display: none;
+    animation: shake 0.5s ease;
+}
+
+.login-error.show {
+    display: block;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+.logout-btn {
+    font-family: 'Inter', sans-serif;
+    background: #dc3545;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.2px;
+}
+
+.logout-btn:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
 }
 
 /* Footer */
@@ -206,19 +377,27 @@ footer {
     margin-bottom: 2rem;
 }
 .footer-section h3 {
+    font-family: 'Poppins', 'Inter', sans-serif;
     margin: 0 0 0.8rem 0;
     font-size: 1.3rem;
+    font-weight: 700;
     color: white;
+    letter-spacing: -0.3px;
 }
 .footer-section h4 {
+    font-family: 'Poppins', 'Inter', sans-serif;
     margin: 0 0 1rem 0;
     font-size: 1.1rem;
+    font-weight: 600;
     color: #ffb703;
+    letter-spacing: -0.2px;
 }
 .footer-section p {
+    font-family: 'Inter', sans-serif;
     margin: 0.5rem 0;
     opacity: 0.9;
     line-height: 1.6;
+    letter-spacing: 0.1px;
 }
 .footer-section ul {
     list-style: none;
@@ -229,9 +408,11 @@ footer {
     margin: 0.6rem 0;
 }
 .footer-section ul li a {
+    font-family: 'Inter', sans-serif;
     color: white;
     text-decoration: none;
     opacity: 0.9;
+    letter-spacing: 0.1px;
     transition: opacity 0.2s;
 }
 .footer-section ul li a:hover {
@@ -246,9 +427,448 @@ footer {
     margin: 0 auto;
 }
 .footer-bottom p {
+    font-family: 'Inter', sans-serif;
     margin: 0;
     opacity: 0.85;
     font-size: 0.9rem;
+    letter-spacing: 0.2px;
+}
+
+/* ==================== ANIMATIONS ==================== */
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide-in from left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Slide-in from right */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scale animation */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Shimmer animation for header */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Animated gradient background */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ==================== ELEMENT ANIMATIONS ==================== */
+
+/* Navbar animation */
+nav {
+    animation: slideInLeft 0.6s ease-out;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: box-shadow 0.3s ease;
+}
+
+nav:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.nav-links li {
+    animation: fadeIn 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+.nav-links li:nth-child(1) { animation-delay: 0.1s; }
+.nav-links li:nth-child(2) { animation-delay: 0.2s; }
+.nav-links li:nth-child(3) { animation-delay: 0.3s; }
+.nav-links li:nth-child(4) { animation-delay: 0.4s; }
+
+.nav-links a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ffb703;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Header animations */
+header {
+    background: linear-gradient(-45deg, var(--primary-color), var(--secondary-color), var(--primary-color), var(--secondary-color));
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: shimmer 3s infinite;
+}
+
+header h1 {
+    animation: fadeIn 0.8s ease-out;
+    position: relative;
+    z-index: 1;
+}
+
+header p {
+    animation: fadeIn 1s ease-out;
+    position: relative;
+    z-index: 1;
+}
+
+/* Section animations */
+section {
+    animation: fadeIn 0.8s ease-out;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Login section should always be visible when shown */
+section.login-section {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    visibility: visible !important;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* Student info animations */
+.student-info {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+#student-photo {
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+#student-photo:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 20px rgba(72,202,228,0.4);
+}
+
+#student-info p {
+    animation: fadeIn 1s ease-out;
+    transition: color 0.3s ease;
+}
+
+#student-info p span {
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+/* Gallery animations */
+.gallery-item {
+    animation: scaleIn 0.5s ease-out;
+    opacity: 0;
+    animation-fill-mode: both;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+}
+
+.gallery-item img {
+    transition: all 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0,119,182,0.2);
+    filter: brightness(1.1);
+}
+
+/* Form animations */
+form {
+    animation: fadeIn 0.8s ease-out;
+}
+
+form input[type="text"],
+form input[type="file"] {
+    transition: all 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="file"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0,119,182,0.1);
+    transform: translateY(-2px);
+}
+
+form button {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+form button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+form button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,119,182,0.3);
+}
+
+form button:active {
+    transform: translateY(0);
+}
+
+/* Delete button animation */
+.delete-photo-btn {
+    transition: all 0.3s ease;
+}
+
+.delete-photo-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+}
+
+/* Footer animations */
+footer {
+    animation: fadeIn 1s ease-out;
+}
+
+.footer-section {
+    animation: fadeIn 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+.footer-section:nth-child(1) { animation-delay: 0.1s; }
+.footer-section:nth-child(2) { animation-delay: 0.2s; }
+.footer-section:nth-child(3) { animation-delay: 0.3s; }
+
+/* ==================== LIGHTBOX MODAL ==================== */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-out;
+    cursor: pointer;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+    animation: scaleIn 0.3s ease-out;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-close:hover {
+    background: rgba(255,255,255,0.3);
+    transform: rotate(90deg);
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-nav:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-prev {
+    left: -70px;
+}
+
+.lightbox-next {
+    right: -70px;
+}
+
+/* Loading spinner */
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Success message animation */
+.success-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #28a745;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 3000;
+    animation: slideInRight 0.5s ease-out;
+    display: none;
+}
+
+.success-message.show {
+    display: block;
 }
 
 /* Responsive design */
@@ -283,5 +903,20 @@ footer {
     }
     footer {
         padding: 2rem 1rem 1rem 1rem;
+    }
+    .lightbox-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    .lightbox-prev {
+        left: 10px;
+    }
+    .lightbox-next {
+        right: 10px;
+    }
+    .lightbox-close {
+        top: 10px;
+        right: 10px;
     }
 }

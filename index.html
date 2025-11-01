@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khursheed-e-Millat School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -57,14 +60,28 @@
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
-                <p><a href="mailto:info@khursheedmillatschool.edu">Mail Us</a></p>
-                <p>Phone: <a href="tel:+92 XXX XXXXXXX">Call us</a></p>
+                <p><a href="mailto:info@khursheedmillatschool.edu">Mail Us!</a></p>
+                <p><a href="tel:+92 XXX XXXXXXX">Call Us!</a></p>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2000 Khursheed-e-Millat School. All rights reserved.</p>
         </div>
     </footer>
+    
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close">&times;</button>
+            <button class="lightbox-nav lightbox-prev">&#8249;</button>
+            <img id="lightbox-img" src="" alt="Gallery Photo">
+            <button class="lightbox-nav lightbox-next">&#8250;</button>
+        </div>
+    </div>
+    
+    <!-- Success Message -->
+    <div id="success-message" class="success-message"></div>
+    
     <script src="app.js"></script>
 </body>
 </html>
