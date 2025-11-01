@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Khursheed-e-Millat School</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Khursheed-e-Millat School</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#student-month">Student of the Month</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="admin.html">Admin Panel</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Admin Panel</h1>
+        <p>Manage Student of the Month and Photo Gallery</p>
+    </header>
+    <main>
+        <section id="admin-panel">
+            <h2>Admin Controls</h2>
+            <form id="student-form">
+                <h3>Update Student of the Month</h3>
+                <label>Name: <input type="text" id="new-student-name" required></label><br>
+                <label>Class: <input type="text" id="new-student-class" required></label><br>
+                <label>Photo: <input type="file" id="new-student-photo" accept="image/*"></label><br>
+                <button type="submit">Update Student</button>
+            </form>
+            <form id="gallery-form">
+                <h3>Add Photo to Gallery</h3>
+                <label>Photo: <input type="file" id="new-gallery-photo" accept="image/*" required></label><br>
+                <button type="submit">Add Photo</button>
+            </form>
+        </section>
+        <section id="gallery-admin">
+            <h2>Manage Gallery Photos</h2>
+            <div id="photo-gallery" class="gallery-grid">
+                <!-- Photos will appear here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Khursheed-e-Millat School</h3>
+                <p>Empowering Future Leaders</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#student-month">Student of the Month</a></li>
+                    <li><a href="index.html#gallery">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: info@khursheedmillatschool.edu</p>
+                <p>Phone: +92 XXX XXXXXXX</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Khursheed-e-Millat School. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="admin.js"></script>
+</body>
+</html>
+
