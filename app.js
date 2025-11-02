@@ -90,6 +90,7 @@ function updateStudentDisplay(data) {
             photoImg.style.transform = 'scale(0.8)';
             setTimeout(() => {
                 photoImg.src = data.photo;
+                photoImg.alt = data.name ? `${data.name} photo` : 'Student Photo';
                 photoImg.style.display = 'block';
                 photoImg.style.transition = 'all 0.5s ease';
                 photoImg.style.opacity = '1';
@@ -121,6 +122,9 @@ function displayGallery(photos) {
         const img = document.createElement('img');
         img.src = photoUrl;
         img.alt = `Gallery Photo ${index + 1}`;
+        // performance: lazy-load and async decoding
+        img.loading = 'lazy';
+        img.decoding = 'async';
         img.onerror = function() {
             imgDiv.remove();
         };
@@ -265,6 +269,16 @@ function initMobileMenu() {
         menuToggle.addEventListener('click', function() {
             menuToggle.classList.toggle('active');
             navLinks.classList.toggle('active');
+            // update aria-expanded for accessibility
+            const expanded = menuToggle.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+            if (expanded) {
+                // focus first link for keyboard users
+                const firstLink = navLinks.querySelector('a');
+                if (firstLink) firstLink.focus();
+            } else {
+                menuToggle.focus();
+            }
         });
         
         // Close menu when clicking on a link
@@ -280,6 +294,19 @@ function initMobileMenu() {
             if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
                 menuToggle.classList.remove('active');
                 navLinks.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Close mobile menu with Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    menuToggle.focus();
+                }
             }
         });
     }

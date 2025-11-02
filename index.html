@@ -2,27 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Khursheed-e-Millat School — empowering future leaders. Student of the Month, photo gallery, and admin panel.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khursheed-e-Millat School</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./img/nobg-logo.png" type="image/png">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <nav>
         <div class="nav-container">
             <div class="header-text">Khursheed-e-Millat School</div>
             <div class="logo-image">
-                <img src="./img/nobg-logo.png" alt="Khursheed-e-Millat School Logo" style="width: 100px; height: 100px;">
+                <img src="./img/nobg-logo.png" alt="Khursheed-e-Millat School Logo" style="width: 100px;">
             </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-controls="primary-navigation" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </div>
-        <ul class="nav-links">
+        <ul id="primary-navigation" class="nav-links">
             <li><a href="#student-month">Student of the Month</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="admin.html">Admin Panel</a></li>
@@ -32,7 +35,7 @@
         <h1>Welcome to Khursheed-e-Millat School</h1>
         <p>Empowering Future Leaders</p>
     </header>
-    <main>
+    <main id="main">
         <section id="student-month">
             <h2>Student of the Month</h2>
             <div id="student-info" class="student-info">
